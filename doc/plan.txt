@@ -1,1 +1,40 @@
-text version of the plan
+0: REQUIREMENTS SPECIFICATIONS
+
+- The result of this project is a group of interconnected html 
+pages with several types of content
+- The content of these pages will describe and provide practice
+with several html and css elements
+
+- Solution description: page style will be assisted through the
+use of id's and classes. I'm not yet sure how to use both relative
+and aboslute URL's
+
+1: SYSTEM ANALYSIS
+
+- Data includes html docs, css docs, and external reference webpages. 
+- All blog page files will be in a common folder; links between
+these files will be accomplished by means of relative URL's
+- external webpages are links to MDN's website: links to these 
+pages will be accomplished by means of absolute URL's
+- Output: html pages that can be browsed in a local file system;
+every page links to every other page; links direct the user to 
+the new page without them having to know the file path
+- algorithms and formulae:
+- Each blog element will be contained in a `div` with a 
+corresponding class attribute
+- blog elements include: navigation bar (nav-bar); blog post 
+(blog-post) cheatsheet (cheatsheet) biographical-block (bio); 
+these classes assit with consistent formatting (font, size, etc)
+across pages and sections
+- cheatsheat definitions (def) will each be contained in a `div`
+- each sequential blog post, cheatsheet, and plan section will
+have a unique id; these id's assist with unique background colors 
+and other unique details
+- a css rule for links inside of definition divs to create
+constency across the page
+- all text elements will be contained in paragraph elements (<p>)
+
+2: DESIGN
+
+- 
+
