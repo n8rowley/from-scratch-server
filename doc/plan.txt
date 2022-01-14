@@ -1,4 +1,4 @@
-0: REQUIREMENTS SPECIFICATIONS
+0: REQUIREMENTS SPECIFICATIONSS
 
 - The result of this project is a group of interconnected html 
 pages with several types of content
