@@ -1,6 +1,153 @@
 <!DOCTYPE html>
 
 <html>
-    
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <title>template.html</title>
+    </head>
+    <body>
+        <h1>Assn00 Software Development Plan</h1>
+
+        <div>
+            <h2>Navigation</h2>
+            (nav bar)
+        </div>
+        <div>
+            <h2>Phase 0: Requirements Specifications</h2>
+            <h3>The problem</h3>
+            <ul>
+                <li>The result of this project is a group of interconnected html pages with several types of content</li>
+            </ul>
+            <h3>The solution</h3>
+            <ul>
+                <li><strong>What I Know: </strong>page style will be assisted through theuse of id's and classes</li>
+                <li><strong>What I'm not sure about: </strong>I'm not sure how to implement a relative url link. Also, I don't know how to implement zebra stripes with css</li>
+         </div>
+        <div>
+            <h2>Phase 1: System Analysis</h2>
+            <h3>Data</h3>
+            <ul>
+                <li>All blog page files will be in a common folder</li>
+                <li>links between these files will be navigated via relative URL's</li>
+                <li>External webpages are links to MDN's website, accomplished via absolute URL's</li>
+            </ul>
+            <h3>Output</h3>
+            <ul>
+                <li>HTML pages that can be browsed in a local file system.</li>
+                <ul>
+                    <li>Every page connects to every other page via a navigation bar. Links can be followed without knowing anything about the path
+                    </li>
+                </ul>
+            </ul>
+        </div>        
+        <div>
+            <h2>Phase 2: Design</h2>
+            <ul>
+                <li>Each blog element will be contained in a <code>&lt;div&gt;</code> tag with a corresponding class attribute 
+                    to assist with consistent formatting (font, size, etc) accross pages and sections</li>
+                <li>blog elements (classes) include:</li>
+                <ul>
+                    <li>
+                        The navigation bar (<code>nav-bar</code>)
+                    </li>
+                    <li>
+                        Blog posts (<code>blog-post</code>)
+                    </li>
+                    <li>
+                        Cheatsheets (<code>cheatsheet</code>)
+                    </li>
+                    <li>
+                        Biographical blocks (<code>bio</code>)
+                    </li>
+                </ul>
+                <li>Sequential cheatsheet entries will be contained within a <code>&lt;div&gt;</code></li>
+                <li>Each sequential blog post, cheatsheet, and plan section will have a unique ID to assist in 
+                    unique background colors and other unique details
+                </li>
+                <li>Displayed links will have a unified style via a css rule that selects <code>&lt;a&gt;</code> tags inside of the navigation bar</li>
+                <li>All plain content text will be contained in <code>&lt;p&gt;</code> elements</li>
+            </ul>
+
+        </div>        
+        
+        <div>
+            <h2>Phase 3: Implementation</h2>
+        </div>        
+        
+        <div>
+            <h2>Phase 4: Testing & Debugging</h2>
+            <h3>Working links test</h3>
+            <ul>
+                <li><strong>Procedure:</strong> For each webpage,</li>
+                <ol>
+                    <li>Scroll to the top of the page where the navigation bar is visible.</li>
+                    <li>Click on the first link</li>
+                    <li>Confirm expected result</li>
+                    <li>Return to the original page and repeat steps 1-3 for each link</li>
+                    <li>Navigate to another webpage and repeat steps 1-4 for every page in the project</li>
+                </ol>
+                <li><strong>Expected Result:</strong> The browser is redirected to the page that corresponds to the link text without any other input</li>
+
+            </ul>
+
+            <h3>Valid HTML test</h3>
+            <ul>
+                <li><strong>Procedure:</strong> For each wepage, upload the source file to W3C's HTML validator tool</li>
+                <ul><li>https://validator.w3.org/nu/#file</li></ul>
+                <li><strong>Expected Result:</strong> The tool reports no warnings or errors</li>
+            </ul> 
+
+            <h3>Valid CSS test</h3>
+            <ul>
+                <li><strong>Procedure:</strong> For each wepage, upload the source file to W3C's CSS validator tool</li>
+                <ul><li>https://validator.w3.org/nu/#file</li></ul>
+                <li><strong>Expected Result:</strong> The tool reports no warnings or errors</li>
+
+            </ul>
+            
+        </div>        
+        
+        <div>
+            <h2>Phase 5: Deployment</h2>
+        </div>        
+        
+        <div>
+            <h2>Phase 6: Maintenance</h2>
+            <ul>
+                <li>
+                    What parts of your program are sloppily written and hard to understand?
+                    <ul>
+                        <li> Are there parts of your program which you aren't quite sure how/why they work?</li>
+                        <li>If a bug is reported in a few months, how long would it take you to find the cause?</li>
+                    </ul>
+                    <p>(Answer)</p>
+                </li>
+                <li>
+                    Will your document make sense to:
+                    <ul>
+                        <li>anybody besides yourself?</li>
+                        <li>yourself in six month's time?</li>
+                    </ul>
+                    <p>(Answer)</p>
+                </li>
+                <li>
+                    How easily will it be to add a new feature to this program in a year?
+                    <p>(Answer)</p>
+                </li>
+                <li>
+                    Will your program continue to work after upgrading:
+                    <ul>
+                        <li>your computer's hardware?</li>
+                        <li>the operating system?</li>
+                        <li>to the next version of Python?</li>
+                    </ul>
+                    <p>(Answer)</p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+        </div>
+    </body>
 
 </html>
