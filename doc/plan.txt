@@ -3,7 +3,7 @@
 - The result of this project is a group of interconnected html 
 pages with several types of content
 - The content of these pages will describe and provide practice
-with several html and css elements
+with several html elements and css selectors
 
 - Solution description: page style will be assisted through the
 use of id's and classes. I'm not yet sure how to use both relative
@@ -11,7 +11,7 @@ and aboslute URL's
 
 1: SYSTEM ANALYSIS
 
-- Data includes html docs, css docs, and external reference webpages. 
+- Data includes html files, css files, and external reference webpages. 
 - All blog page files will be in a common folder; links between
 these files will be accomplished by means of relative URL's
 - external webpages are links to MDN's website: links to these 
@@ -19,11 +19,13 @@ pages will be accomplished by means of absolute URL's
 - Output: html pages that can be browsed in a local file system;
 every page links to every other page; links direct the user to 
 the new page without them having to know the file path
-- algorithms and formulae:
+
+2: DESIGN
+
 - Each blog element will be contained in a `div` with a 
 corresponding class attribute
-- blog elements include: navigation bar (nav-bar); blog post 
-(blog-post) cheatsheet (cheatsheet) biographical-block (bio); 
+- blog elements include: navigation bar (nav-bar), blog posts 
+(blog-post), cheatsheets (cheatsheet), and biographical-blocks (bio);
 these classes assit with consistent formatting (font, size, etc)
 across pages and sections
 - cheatsheat definitions (def) will each be contained in a `div`
@@ -34,7 +36,21 @@ and other unique details
 constency across the page
 - all text elements will be contained in paragraph elements (<p>)
 
-2: DESIGN
+3: IMPLEMENTATION
 
-- 
+4: TESTING & DEBUGGING
 
+- Working links test: for each webpage, scroll to the top of the 
+page to where the navigation bar is visible. Click on the top link;
+expected result; the browser is redirected to the page that corresponds
+to the link that was pressed without any other input.
+return to the original page and repeat the process with the second 
+link. Repeat for all links, repeat for all pages
+
+- Valid HTML test: upload each html document to W3C's validator tool
+https://validator.w3.org/nu/#file; 
+expected result, tool reports no errors, warnings or errors
+
+- Valid css test: upload each css document to W3C's validator tool
+https://validator.w3.org/nu/#file
+expected result, tool reports no erros , warnings, or errors
