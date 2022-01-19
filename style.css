@@ -1,7 +1,8 @@
 /* ------ Document-wide----------- */
 
 html {
-    background-color: black;
+    background-color: black; /* because #darktheme */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
@@ -28,6 +29,10 @@ div {
 
 a {
     display: block;
+}
+
+p {
+    font-size: 1.1em;
 }
 
 /* ------- Index.html -------- */
