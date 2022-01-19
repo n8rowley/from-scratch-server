@@ -1,0 +1,38 @@
+/* ------ Document-wide----------- */
+
+html {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    margin: 0%;
+}
+
+h3 {
+    margin-bottom: 0px;
+}
+
+ul {
+    margin-top: 0%;
+}
+
+div {
+    background-color: burlywood;
+    margin: .5%;
+    padding: 3px;
+}
+
+a {
+    display: block;
+}
+
+/* ------- Index.html -------- */
+
+.blog-post h2 {
+    margin: 0%;
+    margin-bottom: 0%;
+}
