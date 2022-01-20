@@ -1,4 +1,4 @@
-/* ------ Document-wide----------- */
+/* ------ Project-wide----------- */
 
 html {
     background-color: black; /* because #darktheme */
@@ -11,6 +11,7 @@ h1 {
 
 h2 {
     margin: 0%;
+    padding-left: 10px;
 }
 
 h3 {
@@ -35,9 +36,31 @@ p {
     font-size: 1.1em;
 }
 
+.flex-container {
+    display: flex;
+    margin: 0%;
+    padding:0%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.flex-container div {
+    margin: 0%;
+    padding-left: 5px;
+
+}
+
+
+
 /* ------- Index.html -------- */
 
 .blog-post h2 {
     margin: 0%;
     margin-bottom: 0%;
+}
+
+/* ------- about.html -------- */
+
+.profile {
+    height: 400px;
 }
