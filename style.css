@@ -42,13 +42,18 @@ p {
     padding:0%;
     padding-left: 5px;
     padding-right: 5px;
+    max-width: 100%;
 }
 
-.flex-container div {
-    margin: 0%;
-    padding-left: 5px;
 
+.flex-container .gallery-pane {
+    display: table-cell;
+    height: 500px;
+    text-align: center;
+    width: auto;
+    vertical-align: middle;
 }
+
 
 
 
