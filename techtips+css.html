@@ -3,6 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+
         <link rel="stylesheet" href="style.css" type="text/css" />
         <title>Pretty Tips</title>
     </head>
@@ -20,128 +21,119 @@
             <a href="./techtips-css.html">The uglier tips</a>
         </div>
 
-        <div>
+        <div class="cheatsheet" style="background-color: cadetblue;">
             <h2>HTML elements</h2>
-            <div>
-                <a>
+            <div class="cs-entry">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div" target="_blank">
                     <code>&lt;div&gt;</code>
                 </a>
                 <ul>
                     <li>
-                        Purpose: This tag provides no inherent formatting to the contents. Instead, it acts as a container 
+                        <strong>Purpose:</strong> This tag provides no inherent formatting to the contents. Instead, it acts as a container 
                         for seperating out content to be selected and styled with CSS
                     </li>
                     <li>
-                        Interesting note: The <code>align</code> attribute is depricated. To align <code>div</code> elements on 
+                        <strong>Interesting note:</strong> The <code>align</code> attribute is depricated. To align <code>div</code> elements on 
                         a page, use a css flex box or css grid
                     </li>
                     <li>
-                        Interesting note: <code>div</code> tags should only be used when other pre-defined tags are not applicable
+                        <strong>Interesting note:</strong> <code>div</code> tags should only be used when other pre-defined tags are not applicable
                     </li>
-                    <li>Default Display: Block</li>
+                    <li><strong>Default Display:</strong> Block</li>
                 </ul>
             </div>
-            <div>
-                <a>
+            <div  class="cs-entry">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code", target="_blank">
                     <code>&lt;code&gt;</code>
                 </a>
                 <ul>
-                    <li>Purpose: format the contents to signify that it is a segment of computer code. The default behavior is
+                    <li><strong>Purpose:</strong> format the contents to signify that it is a segment of computer code. The default behavior is
                         to display the content in the defualt monospace font.
                     </li>
-                    <li>Default Display: In-line</li>
+                    <li><strong>Default Display:</strong> In-line</li>
                     <li>
-                        Interesting Note: code is meant for single lines of code, in order to show a block of code including the 
+                        <strong>Interesting Note:</strong> code is meant for single lines of code, in order to show a block of code including the 
                         white space wrap the block in the <code>pre</code> tag.
                     </li>
                 </ul>
             </div>
-            <div>
-                <a>
+            <div class="cs-entry">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol" target="_blank">
                     <code>&lt;ol&gt;</code>
                 </a>
                 <ul>
-                    <li>Purpose: A container for a list of items in order. The default marker is a number for each item</li>
-                    <li>Interesting Note: <code>ol</code> and <code>ul</code> elements can be nested as deeply as desired</li>
-                    <li>Default Display: Block</li>
+                    <li><strong>Purpose:</strong> A container for a list of items in order. The default marker is a number for each item</li>
+                    <li><strong>Interesting Note:</strong> <code>ol</code> and <code>ul</code> elements can be nested as deeply as desired</li>
+                    <li><strong>Default Display:</strong> Block</li>
                 </ul>
             </div>
-            <div>
-                <a>
+            <div class="cs-entry">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li" target="_blank">
                     <code>&lt;li&gt;</code>
                 </a>
                 <ul>
                     <li>
-                        Purpose: Represents a single item in a list. <code>li</code> elements must be the child of a 
+                        <strong>Purpose:</strong> Represents a single item in a list. <code>li</code> elements must be the child of a 
                         <code>ol</code>, <code>ul</code>, or <code>menu</code> element.
                     </li>
-                    <li>Default Disply: Block</li>
+                    <li><strong>Default Disply:</strong> Block</li>
                 </ul>
             </div>
         </div>
 
 
-        <div>
+        <div class="cheatsheet" style="background-color: mediumblue;">
             <h2>HTML Characters</h2>
-            <div>
-                <a>
-                    <code>&amp;</code>
-                </a>
+            <div class="cs-entry">
+                <a><code>&amp;</code></a>
                 <ul>
-                    <li>Literal Interpretation: Indicates the the following text will represent an HTML entity.</li>
-                    <li>Entity: <code>&amp;amp;</code></li>
+                    <li><strong>Literal Interpretation:</strong> Indicates the the following text will represent an HTML entity.</li>
+                    <li><strong>Entity:</strong> <code>&amp;amp;</code></li>
                 </ul>
             </div>
 
             <div>
-                <a>
-                    <code>&lt;</code>
-                </a>
-                <ul>
-                    <li>Literal Interpretation: Indicates the start of an HTML tag</li>
-                    <li>Entity: <code>&amp;lt;</code></li>
+                <a><code>&lt;</code></a>
+                <ul class="cs-entry">
+                    <li><strong>Literal Interpretation:</strong> Indicates the start of an HTML tag</li>
+                    <li><strong>Entity:</strong> <code>&amp;lt;</code></li>
                 </ul>
             </div>
 
             <div>
-                <a>
-                    <code>&quot;</code>
-                <ul>
-                    <li>Literal Interpretation: Indicates the beginning and end of a value given to an attribute</li>
-                    <li>Entity: <code>&amp;quot;</code></li>
+                <a><code>&quot;</code></a>
+                <ul class="cs-entry">
+                    <li><strong>Literal Interpretation:</strong> Indicates the beginning and end of a value given to an attribute</li>
+                    <li><strong>Entity:</strong> <code>&amp;quot;</code></li>
                 </ul>
             </div>
         </div>
 
-        <div>
+        <div class="cheatsheet"  style="background-color: cornflowerblue;">
             <h2>CSS Selectors </h2>
             <div>
-                <a>
-                    <code>elementname</code>
-                </a>
-                <ul>
-                    <li>HTML Feature Selected: all tags of type &lt;elementname&gt; </li>
-                    <li>Assignment: N/A. When an element is created, it can automatically be selected by its tag name</li>
+                <a><code>elementname</code></a>
+                <ul class="cs-entry" >
+                    <li><strong>HTML Feature Selected:</strong> all tags of type &lt;elementname&gt; </li>
+                    <li><strong>Assignment:</strong> N/A. When an element is created, it can automatically be selected by its tag name</li>
                 </ul>
             </div>
 
             <div>
-                <a>
-                    <code>.class</code>
-                </a>
-                <ul>
-                    <li>HTML Feature Selected: all elements whose class attribute matches the selected class</li>
-                    <li>Assignment: Add the attribute "class" inside the start tag of an element. Assign its value by placing
+                <a><code>.class</code></a>
+                <ul class="cs-entry">
+                    <li><strong>HTML Feature Selected:</strong> all elements whose class attribute matches the selected class</li>
+                    <li><strong>Assignment:</strong> Add the attribute "class" inside the start tag of an element. Assign its value by placing
                         the desired class name in quotes beside the <code>class</code> attribute followed by an <code>=</code>
                         sign
                     </li>
                     <li>
-                        Example: Assign the class "foot note" to a <code>div</code>
+                        <strong>Example:</strong> Assign the class "foot note" to a <code>div</code>
                         <ul>
                             <li>HTML assignment: <code>&lt;div class="foot-note"&gt;(content)&lt;/div&gt;</code></li>
                             <li>CSS selection: <code>.foot-note</code></li>
-                            <li>Note: class names are seperated by white space. Class names, therefore, must be a single string
-                                of characters.
+                            <li><em>Note: class names are seperated by white space. Class names, therefore, must be a single string
+                                    of characters.</em>
                             </li>
                         </ul>
                     </li>
@@ -149,23 +141,21 @@
             </div>
 
             <div>
-                <a>
-                    <code>#id</code>
-                </a>
-                <ul>
-                    <li>HTML Feature Selected: the html element whose id attribute matches the selected id</li>
-                    <li>Assignment: Add the attribute "id" inside the start tag of an element. Assign its value by placing
+                <a><code>#id</code></a>
+                <ul class="cs-entry">
+                    <li><strong>HTML Feature Selected:</strong> the html element whose id attribute matches the selected id</li>
+                    <li><strong>Assignment:</strong> Add the attribute "id" inside the start tag of an element. Assign its value by placing
                         the desired id in quotes beside the <code>id</code> attribute followed by an <code>=</code>
                         sign
                     </li>
                     <li>
-                        Example: Assign the id "home" to a <code>div</code>
+                        <strong>Example:</strong> Assign the id "home" to a <code>div</code>
                         <ul>
                             <li>HTML Assignment: <code>&lt;div id="home"&gt;(content)&lt;/div&gt;</code></li>
                             <li>CSS Selection: <code>#home</code></li>
-                            <li>Note: id's are intended to refer to a single html element in a document. The language takes no 
-                                measures to prevent multiple assignment, but the practice is discouraged. For multiple assignments,
-                                use the class attribute.
+                            <li><em>Note: id's are intended to refer to a single html element in a document. The language takes no
+                                    measures to prevent multiple assignment, but the practice is discouraged. For multiple assignments,
+                                    use the class attribute.</em>
                             </li>
                         </ul>
                     </li>
@@ -174,17 +164,15 @@
             </div>
 
             <div>
-                <a>
-                    <code>:nth-child</code>
-                </a>
-                <ul>
-                    <li>HTML Feature Selected: elements based on their position among a group of siblings</li>
+                <a><code>:nth-child</code></a>
+                <ul class="cs-entry">
+                    <li><strong>HTML Feature Selected:</strong> elements based on their position among a group of siblings</li>
                     <li>
-                        Assignment: N/A. The <code>nth-child</code> selector is a pseudo-selector. It selects elements based on the
+                        <strong>Assignment:</strong> N/A. The <code>nth-child</code> selector is a pseudo-selector. It selects elements based on the
                         structure of the html file that it applies to.
                     </li>
                     <li>
-                        Example: Select every-other <code>li</code>in a list starting with the first
+                        <strong>Example:</strong> Select every-other <code>li</code>in a list starting with the first
                         <ul>
                             <li>CSS Selection: <code>li:nth-child(odd)</code></li>
                         </ul>
@@ -192,46 +180,40 @@
                 </ul>
             </div>
         </div>
-        <div>
+        <div class="cheatsheet"  style="background-color: royalblue;">
             <h2>CSS Properties</h2>
-            <div>
-                <a>
-                    <code>background-color</code>
-                </a>
-                <ul>
-                    <li>Purpose: change the background color of an element</li>
-                    <li>Possible values: a color specified in one of a number of schemes. Some schemes include:
+            <div class="cs-entry">
+                <a><code>background-color</code></a>
+                <ul class="cs-entry">
+                    <li><strong>Purpose:</strong> change the background color of an element</li>
+                    <li><strong>Possible values:</strong> a color specified in one of a number of schemes. Some schemes include:
                         <ul>
                             <li>rgb</li>
                             <li>hsl</li>
                             <li>hex-color</li>
                             <li>named-color</li>
-                            <li>and many others</li>
+                            <li><em>and many others</em></li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <div>
-                <a>
-                    <code>margin</code>
-                </a>
+            <div class="cs-entry">
+                <a><code>margin</code></a>
                 <ul>
-                    <li>Purpose: Shorthand property for setting a margin on all four sides</li>
+                    <li><strong>Purpose:</strong> Shorthand property for setting a margin on all four sides</li>
                     <li>
-                        Possible Values: 1-4 values representing the desired amount of margin for one or more sides of the element
+                        <strong>Possible Values:</strong> 1-4 values representing the desired amount of margin for one or more sides of the element
                     </li>
-                    <li>Margin amounts can be specified with a length, a percent, or using auto.</li>
+                    <li><strong>Note:</strong> Margin amounts can be specified with a length, a percent, or using auto.</li>
                 </ul>
             </div>
             <div>
-                <a>
-                    <code>display</code>
-                </a>
-                <ul>
-                    <li>Purpose: Specifies whether an element is rendered in-line or as a block. Additionally, specifies the 
+                <a><code>display</code></a>
+                <ul class="cs-entry">
+                    <li><strong>Purpose:</strong> Specifies whether an element is rendered in-line or as a block. Additionally, specifies the 
                         layout used for children including flow layout, grid or flex.
                     </li>
-                    <li>Possible Values: "in-line", "block", "flow", "flex", "grid", some combination of these and/or several others</li>
+                    <li><strong>Possible Values:</strong> "in-line", "block", "flow", "flex", "grid", some combination of these and/or several others</li>
                 </ul>
             </div>
         </div>
