@@ -10,9 +10,9 @@
 
     <body>
         <!-- content goes here -->
-        <h1>Techtips w/css</h1>
+        <h1 id="tips-with">Techtips w/css</h1>
 
-        <div>
+        <div class="nav-bar">
             <h2>Navigation</h2>
             <a href="./index.html">Check out the blog</a>
             <a href="./about.html">About the blogger</a>
@@ -85,7 +85,9 @@
         <div class="cheatsheet" style="background-color: mediumblue;">
             <h2>HTML Characters</h2>
             <div class="cs-entry">
-                <a><code>&amp;</code></a>
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Entity">
+                    <code>&amp;</code>
+                </a>
                 <ul>
                     <li><strong>Literal Interpretation:</strong> Indicates the the following text will represent an HTML entity.</li>
                     <li><strong>Entity:</strong> <code>&amp;amp;</code></li>
@@ -93,7 +95,9 @@
             </div>
 
             <div>
-                <a><code>&lt;</code></a>
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Entity">
+                    <code>&lt;</code>
+                </a>
                 <ul class="cs-entry">
                     <li><strong>Literal Interpretation:</strong> Indicates the start of an HTML tag</li>
                     <li><strong>Entity:</strong> <code>&amp;lt;</code></li>
@@ -101,7 +105,9 @@
             </div>
 
             <div>
-                <a><code>&quot;</code></a>
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Entity">
+                    <code>&quot;</code>
+                </a>
                 <ul class="cs-entry">
                     <li><strong>Literal Interpretation:</strong> Indicates the beginning and end of a value given to an attribute</li>
                     <li><strong>Entity:</strong> <code>&amp;quot;</code></li>
@@ -111,17 +117,21 @@
 
         <div class="cheatsheet"  style="background-color: cornflowerblue;">
             <h2>CSS Selectors </h2>
-            <div>
-                <a><code>elementname</code></a>
-                <ul class="cs-entry" >
+            <div class="cs-entry">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors">
+                    <code>elementname</code>
+                </a>
+                <ul>
                     <li><strong>HTML Feature Selected:</strong> all tags of type &lt;elementname&gt; </li>
                     <li><strong>Assignment:</strong> N/A. When an element is created, it can automatically be selected by its tag name</li>
                 </ul>
             </div>
 
-            <div>
-                <a><code>.class</code></a>
-                <ul class="cs-entry">
+            <div class="cs-entry">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors">
+                    <code>.class</code>
+                </a>
+                <ul>
                     <li><strong>HTML Feature Selected:</strong> all elements whose class attribute matches the selected class</li>
                     <li><strong>Assignment:</strong> Add the attribute "class" inside the start tag of an element. Assign its value by placing
                         the desired class name in quotes beside the <code>class</code> attribute followed by an <code>=</code>
@@ -140,9 +150,11 @@
                 </ul>
             </div>
 
-            <div>
-                <a><code>#id</code></a>
-                <ul class="cs-entry">
+            <div class="cs-entry">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors">
+                    <code>#id</code>
+                </a>
+                <ul>
                     <li><strong>HTML Feature Selected:</strong> the html element whose id attribute matches the selected id</li>
                     <li><strong>Assignment:</strong> Add the attribute "id" inside the start tag of an element. Assign its value by placing
                         the desired id in quotes beside the <code>id</code> attribute followed by an <code>=</code>
@@ -163,9 +175,11 @@
                 </ul>
             </div>
 
-            <div>
-                <a><code>:nth-child</code></a>
-                <ul class="cs-entry">
+            <div class="cs-entry">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child">
+                    <code>:nth-child</code>
+                </a>
+                <ul>
                     <li><strong>HTML Feature Selected:</strong> elements based on their position among a group of siblings</li>
                     <li>
                         <strong>Assignment:</strong> N/A. The <code>nth-child</code> selector is a pseudo-selector. It selects elements based on the
@@ -183,8 +197,10 @@
         <div class="cheatsheet"  style="background-color: royalblue;">
             <h2>CSS Properties</h2>
             <div class="cs-entry">
-                <a><code>background-color</code></a>
-                <ul class="cs-entry">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color">
+                    <code>background-color</code>
+                </a>
+                <ul>
                     <li><strong>Purpose:</strong> change the background color of an element</li>
                     <li><strong>Possible values:</strong> a color specified in one of a number of schemes. Some schemes include:
                         <ul>
@@ -198,7 +214,9 @@
                 </ul>
             </div>
             <div class="cs-entry">
-                <a><code>margin</code></a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin">
+                    <code>margin</code>
+                </a>
                 <ul>
                     <li><strong>Purpose:</strong> Shorthand property for setting a margin on all four sides</li>
                     <li>
@@ -207,9 +225,11 @@
                     <li><strong>Note:</strong> Margin amounts can be specified with a length, a percent, or using auto.</li>
                 </ul>
             </div>
-            <div>
-                <a><code>display</code></a>
-                <ul class="cs-entry">
+            <div class="cs-entry">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">
+                    <code>display</code>
+                </a>
+                <ul>
                     <li><strong>Purpose:</strong> Specifies whether an element is rendered in-line or as a block. Additionally, specifies the 
                         layout used for children including flow layout, grid or flex.
                     </li>
