@@ -3,76 +3,88 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Ugly Tips</title>
+        <title>Hard Tips</title>
     </head>
 
-    <body>
+    <body style="font-family: Segoe UI, Tahoma, Geneva, Verdnan, sans-serif; background-color: black;">
         <!-- content goes here -->
-        <h1>Techtips w/css</h1>
+        <h1 style="color: DarkGray; padding-left: 25%;">Techtips w/o CSS</h1>
 
-        <div>
-            <h2>Navigation</h2>
-            <a href="./index.html">Check out the blog</a>
-            <a href="./about.html">About the blogger</a>
-            <a href="./plan.html">See the design plan</a>
-            <a href="./techtips+css.html">The prettier tips</a>
-            <a href="./techtips-css.html">The uglier tips</a>
+        <div style="margin: .5%;padding: 3px; background-color: burlywood;">
+            <h2 style="margin: 0%;padding-left: 10px;">Navigation</h2>
+            <a style="display: block;" href="./about.html">About the blogger</a>
+            <a style="display: block;" href="./index.html">Check out the blog</a>
+            <a style="display: block;" href="./plan.html">See the design plan</a>
+            <a style="display: block;" href="./techtips+css.html">The prettier tips</a>
+            <a style="display: block;" href="./techtips-css.html">The uglier tips</a>
         </div>
 
-        <div>
-            <h2>HTML elements</h2>
+        <div style="margin: .5%;padding: 3px;background-color: cadetblue;">
+            <h2 style="color: white; text-align: center; margin: 0%;padding-left: 10px;">HTML elements</h2>
             <div>
-                <a>
-                    <code>&lt;div&gt;</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div" target="_blank" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">
+                        &lt;div&gt;</code>
                 </a>
-                <ul>
-                    <li>
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;">
                         <strong>Purpose:</strong> This tag provides no inherent formatting to the contents. Instead, it acts as a container 
                         for seperating out content to be selected and styled with CSS
                     </li>
                     <li>
-                        <strong>Interesting note:</strong> The <code>align</code> attribute is depricated. To align <code>div</code> elements on 
+                        <strong>Interesting note:</strong> The 
+                        <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">align</code> 
+                        attribute is depricated. To align 
+                        <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">div</code> 
+                        elements on 
                         a page, use a css flex box or css grid
                     </li>
-                    <li>
-                        <strong>Interesting note:</strong> <code>div</code> tags should only be used when other pre-defined tags are not applicable
+                    <li style="background-color: lightsteelblue;">
+                        <strong>Interesting note:</strong> <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">div</code> tags should only be used when other pre-defined tags are not applicable
                     </li>
                     <li><strong>Default Display:</strong> Block</li>
                 </ul>
             </div>
             <div>
-                <a>
-                    <code>&lt;code&gt;</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code", target="_blank" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">
+                        &lt;code&gt;
+                    </code>
                 </a>
-                <ul>
-                    <li><strong>Purpose:</strong> format the contents to signify that it is a segment of computer code. The default behavior is
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;"><strong>Purpose:</strong> format the contents to signify that it is a segment of computer code. The default behavior is
                         to display the content in the defualt monospace font.
                     </li>
                     <li><strong>Default Display:</strong> In-line</li>
-                    <li>
+                    <li style="background-color: lightsteelblue;">
                         <strong>Interesting Note:</strong> code is meant for single lines of code, in order to show a block of code including the 
-                        white space wrap the block in the <code>pre</code> tag.
+                        white space wrap the block in the 
+                        <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">pre</code> tag.
                     </li>
                 </ul>
             </div>
             <div>
-                <a>
-                    <code>&lt;ol&gt;</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol" target="_blank" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">
+                        &lt;ol&gt;
+                    </code>
                 </a>
-                <ul>
-                    <li><strong>Purpose:</strong> A container for a list of items in order. The default marker is a number for each item</li>
-                    <li><strong>Interesting Note:</strong> <code>ol</code> and <code>ul</code> elements can be nested as deeply as desired</li>
-                    <li><strong>Default Display:</strong> Block</li>
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;"><strong>Purpose:</strong> A container for a list of items in order. The default marker is a number for each item</li>
+                    <li><strong>Interesting Note:</strong> <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">ol</code> and <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">ul</code> elements can be nested as deeply as desired</li>
+                    <li style="background-color: lightsteelblue;"><strong>Default Display:</strong> Block</li>
                 </ul>
             </div>
             <div>
-                <a>
-                    <code>&lt;li&gt;</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li" target="_blank" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">
+                        &lt;li&gt;
+                    </code>
                 </a>
-                <ul>
-                    <li>
-                        <strong>Purpose:</strong> Represents a single item in a list. <code>li</code> elements must be the child of a 
-                        <code>ol</code>, <code>ul</code>, or <code>menu</code> element.
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;">
+                        <strong>Purpose:</strong> Represents a single item in a list. <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">li</code> elements must be the child of a 
+                        <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">ol</code>, <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">ul</code>, or <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">menu</code> element.
                     </li>
                     <li><strong>Default Disply:</strong> Block</li>
                 </ul>
@@ -80,66 +92,69 @@
         </div>
 
 
-        <div>
-            <h2>HTML Characters</h2>
+        <div style="margin: .5%;padding: 3px;background-color: mediumblue;">
+            <h2 style="margin: 0%;padding-left: 10px;">HTML Characters</h2>
             <div>
-                <a>
-                    <code>&amp;</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Entity" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">&amp;</code>
                 </a>
-                <ul>
-                    <li><strong>Literal Interpretation:</strong> Indicates the the following text will represent an HTML entity.</li>
-                    <li><strong>Entity:</strong> <code>&amp;amp;</code></li>
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;"><strong>Literal Interpretation:</strong> Indicates the the following text will represent an HTML entity.</li>
+                    <li><strong>Entity:</strong> <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">&amp;amp;</code></li>
                 </ul>
             </div>
 
             <div>
-                <a>
-                    <code>&lt;</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Entity" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">&lt;</code>
                 </a>
                 <ul>
-                    <li><strong>Literal Interpretation:</strong> Indicates the start of an HTML tag</li>
-                    <li><strong>Entity:</strong> <code>&amp;lt;</code></li>
+                    <li style="background-color: lightsteelblue;"><strong>Literal Interpretation:</strong> Indicates the start of an HTML tag</li>
+                    <li><strong>Entity:</strong> <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">&amp;lt;</code></li>
                 </ul>
             </div>
 
             <div>
-                <a>
-                    <code>&quot;</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Entity" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">&quot;</code>
+                </a>
                 <ul>
-                    <li><strong>Literal Interpretation:</strong> Indicates the beginning and end of a value given to an attribute</li>
-                    <li><strong>Entity:</strong> <code>&amp;quot;</code></li>
+                    <li style="background-color: lightsteelblue;"><strong>Literal Interpretation:</strong> Indicates the beginning and end of a value given to an attribute</li>
+                    <li><strong>Entity:</strong> <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">&amp;quot;</code></li>
                 </ul>
             </div>
         </div>
 
-        <div>
-            <h2>CSS Selectors </h2>
+        <div style="margin: .5%;padding: 3px;background-color: cornflowerblue;">
+            <h2 style="margin: 0%;padding-left: 10px;">CSS Selectors </h2>
             <div>
-                <a>
-                    <code>elementname</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">elementname</code>
                 </a>
-                <ul>
-                    <li><strong>HTML Feature Selected:</strong> all tags of type &lt;elementname&gt; </li>
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;"><strong>HTML Feature Selected:</strong> all tags of type &lt;elementname&gt; </li>
                     <li><strong>Assignment:</strong> N/A. When an element is created, it can automatically be selected by its tag name</li>
                 </ul>
             </div>
 
             <div>
-                <a>
-                    <code>.class</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">
+                        .class
+                    </code>
                 </a>
-                <ul>
-                    <li><strong>HTML Feature Selected:</strong> all elements whose class attribute matches the selected class</li>
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;"><strong>HTML Feature Selected:</strong> all elements whose class attribute matches the selected class</li>
                     <li><strong>Assignment:</strong> Add the attribute "class" inside the start tag of an element. Assign its value by placing
-                        the desired class name in quotes beside the <code>class</code> attribute followed by an <code>=</code>
+                        the desired class name in quotes beside the <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">class</code> attribute followed by an <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">=</code>
                         sign
                     </li>
-                    <li>
-                        <strong>Example:</strong> Assign the class "foot note" to a <code>div</code>
-                        <ul>
-                            <li>HTML assignment: <code>&lt;div class="foot-note"&gt;(content)&lt;/div&gt;</code></li>
-                            <li>CSS selection: <code>.foot-note</code></li>
-                            <li><em>Note: class names are seperated by white space. Class names, therefore, must be a single string
+                    <li style="background-color: lightsteelblue;">
+                        <strong>Example:</strong> Assign the class "foot note" to a <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">div</code>
+                        <ul style="margin-top: 0%;">
+                            <li style="background-color: cornflowerblue;">HTML assignment: <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">&lt;div class="foot-note"&gt;(content)&lt;/div&gt;</code></li>
+                            <li>CSS selection: <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">.foot-note</code></li>
+                            <li style="background-color: cornflowerblue;"><em>Note: class names are seperated by white space. Class names, therefore, must be a single string
                                     of characters.</em>
                             </li>
                         </ul>
@@ -148,21 +163,23 @@
             </div>
 
             <div>
-                <a>
-                    <code>#id</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">
+                        #id
+                    </code>
                 </a>
-                <ul>
-                    <li><strong>HTML Feature Selected:</strong> the html element whose id attribute matches the selected id</li>
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;"><strong>HTML Feature Selected:</strong> the html element whose id attribute matches the selected id</li>
                     <li><strong>Assignment:</strong> Add the attribute "id" inside the start tag of an element. Assign its value by placing
-                        the desired id in quotes beside the <code>id</code> attribute followed by an <code>=</code>
+                        the desired id in quotes beside the <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">id</code> attribute followed by an <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">=</code>
                         sign
                     </li>
-                    <li>
-                        <strong>Example:</strong> Assign the id "home" to a <code>div</code>
-                        <ul>
-                            <li>HTML Assignment: <code>&lt;div id="home"&gt;(content)&lt;/div&gt;</code></li>
-                            <li>CSS Selection: <code>#home</code></li>
-                            <li><em>Note: id's are intended to refer to a single html element in a document. The language takes no
+                    <li style="background-color: lightsteelblue;">
+                        <strong>Example:</strong> Assign the id "home" to a <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">div</code>
+                        <ul style="margin-top: 0%;">
+                            <li style="background-color: cornflowerblue;">HTML Assignment: <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">&lt;div id="home"&gt;(content)&lt;/div&gt;</code></li>
+                            <li>CSS Selection: <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">#home</code></li>
+                            <li style="background-color: cornflowerblue;"><em>Note: id's are intended to refer to a single html element in a document. The language takes no
                                     measures to prevent multiple assignment, but the practice is discouraged. For multiple assignments,
                                     use the class attribute.</em>
                             </li>
@@ -173,61 +190,61 @@
             </div>
 
             <div>
-                <a>
-                    <code>:nth-child</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">:nth-child</code>
                 </a>
-                <ul>
-                    <li><strong>HTML Feature Selected:</strong> elements based on their position among a group of siblings</li>
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;"><strong>HTML Feature Selected:</strong> elements based on their position among a group of siblings</li>
                     <li>
-                        <strong>Assignment:</strong> N/A. The <code>nth-child</code> selector is a pseudo-selector. It selects elements based on the
+                        <strong>Assignment:</strong> N/A. The <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">nth-child</code> selector is a pseudo-selector. It selects elements based on the
                         structure of the html file that it applies to.
                     </li>
-                    <li>
-                        <strong>Example:</strong> Select every-other <code>li</code>in a list starting with the first
-                        <ul>
-                            <li>CSS Selection: <code>li:nth-child(odd)</code></li>
+                    <li style="background-color: lightsteelblue;">
+                        <strong>Example:</strong> Select every-other <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">li</code>in a list starting with the first
+                        <ul style="margin-top: 0%;">
+                            <li>CSS Selection: <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">li:nth-child(odd)</code></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-        <div>
-            <h2>CSS Properties</h2>
+        <div style="margin: .5%;padding: 3px;background-color: royalblue;">
+            <h2 style="margin: 0%;padding-left: 10px;">CSS Properties</h2>
             <div>
-                <a>
-                    <code>background-color</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">background-color</code>
                 </a>
-                <ul>
-                    <li><strong>Purpose:</strong> change the background color of an element</li>
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;"><strong>Purpose:</strong> change the background color of an element</li>
                     <li><strong>Possible values:</strong> a color specified in one of a number of schemes. Some schemes include:
-                        <ul>
-                            <li>rgb</li>
+                        <ul style="margin-top: 0%;">
+                            <li style="background-color: lightsteelblue;">rgb</li>
                             <li>hsl</li>
-                            <li>hex-color</li>
+                            <li style="background-color: lightsteelblue;">hex-color</li>
                             <li>named-color</li>
-                            <li><em>and many others</em></li>
+                            <li style="background-color: lightsteelblue;"><em>and many others</em></li>
                         </ul>
                     </li>
                 </ul>
             </div>
             <div>
-                <a>
-                    <code>margin</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">margin</code>
                 </a>
-                <ul>
-                    <li><strong>Purpose:</strong> Shorthand property for setting a margin on all four sides</li>
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;"><strong>Purpose:</strong> Shorthand property for setting a margin on all four sides</li>
                     <li>
                         <strong>Possible Values:</strong> 1-4 values representing the desired amount of margin for one or more sides of the element
                     </li>
-                    <li><strong>Note:</strong> Margin amounts can be specified with a length, a percent, or using auto.</li>
+                    <li style="background-color: lightsteelblue;"><strong>Note:</strong> Margin amounts can be specified with a length, a percent, or using auto.</li>
                 </ul>
             </div>
             <div>
-                <a>
-                    <code>display</code>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" style="display: block; padding-bottom: 5px;";">
+                    <code style="font-size: 1.1rem;background-color: lightgray;border-radius: 5px;padding: 0px 10px;font-weight: bold;color: rgb(92, 92, 92);">display</code>
                 </a>
-                <ul>
-                    <li><strong>Purpose:</strong> Specifies whether an element is rendered in-line or as a block. Additionally, specifies the 
+                <ul style="margin-top: 0%;">
+                    <li style="background-color: lightsteelblue;"><strong>Purpose:</strong> Specifies whether an element is rendered in-line or as a block. Additionally, specifies the 
                         layout used for children including flow layout, grid or flex.
                     </li>
                     <li><strong>Possible Values:</strong> "in-line", "block", "flow", "flex", "grid", some combination of these and/or several others</li>
@@ -236,3 +253,4 @@
         </div>
     </body>
 </html>
+
