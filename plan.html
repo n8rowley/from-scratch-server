@@ -17,7 +17,7 @@
             <a href="./techtips+css.html">The prettier tips</a>
             <a href="./techtips-css.html">The uglier tips</a>
         </div>
-        <div id="phase0" style="background-color: bisque;">
+        <div id="phase0">
             <h2>Phase 0: Requirements Specifications</h2>
             <h3>The problem</h3>
             <ul>
@@ -30,7 +30,7 @@
             </ul>
         </div>
 
-        <div id="phase1" style="background-color: coral;">
+        <div id="phase1">
             <h2>Phase 1: System Analysis</h2>
             <h3>Data</h3>
             <ul>
@@ -50,43 +50,61 @@
             </ul>
         </div>    
             
-        <div id="phase2" style="background-color: cornflowerblue;">
+        <div id="phase2">
             <h2>Phase 2: Design</h2>
             <ul>
-                <li>Each blog element will be contained in a <code>&lt;div&gt;</code> tag with a corresponding class attribute 
-                    to assist with consistent formatting (font, size, etc) accross pages and sections</li>
-                <li>blog elements (classes) include:
+                <li>
+                    Each <code>&lt;div&gt;</code> element that will have a similar background color or properties to others on 
+                    the same page will be managed with a common class. Examples include:
                     <ul>
-                        <li>
-                            The navigation bar (<code>nav-bar</code>)
-                        </li>
-                        <li>
-                            Blog posts (<code>blog-post</code>)
-                        </li>
-                        <li>
-                            Cheatsheets (<code>cheatsheet</code>)
-                        </li>
-                        <li>
-                            Biographical blocks (<code>bio</code>)
-                        </li>
+                        <li><code>blog-post</code></li>
+                        <li><code>nav-bar</code></li>
+                        <li><code>cheatsheet</code></li>
+                        <li><code>bio</code></li>
                     </ul>
                 </li>
-                
-                <li>Sequential cheatsheet entries will be contained within a <code>&lt;div&gt;</code></li>
-                <li>Each sequential blog post, cheatsheet, and plan section will have a unique ID to assist in 
-                    unique background colors and other unique details
+
+                <li>
+                    Each <code>&lt;div&gt;</code> element that requires a unique background color or other properties will be 
+                    managed by a unique id. Examples include:
+                    <ul>
+                        <li><code>phase(0-6)</code></li>
+                        <li><code>element</code></li>
+                        <li><code>entity</code></li>
+                        <li><code>selector</code></li>
+                        <li><code>property</code></li>
+                    </ul>
                 </li>
-                <li>Displayed links will have a unified style via a css rule that selects <code>&lt;a&gt;</code> tags inside of the navigation bar</li>
-                <li>All plain content text will be contained in <code>&lt;p&gt;</code> elements</li>
+                <li>Each blog element will be contained in a <code>&lt;div&gt;</code> tag with a corresponding class attribute 
+                    to assist with consistent formatting (font, size, etc) accross pages and sections</li>
+                <li>Picture gallery will be implemented using a flex box for horizontal display</li>
+                <li>
+                    Possible uses of less-obvious tags:
+                    <ul>
+                        <li><strong>div:</strong> basically everything</li>
+                        <li><strong>p:</strong> blocks of content text</li>
+                        <li><strong>code:</strong> representing techtip entries as they would look in the source code</li>
+                        <li><strong>ul:</strong> listing out blocks of info</li>
+                        <li><strong>ol:</strong> describing the steps in executing tests</li>
+                    </ul>
+                </li>
+                <li>
+                    Possible uses of less-obvious selectors
+                    <ul>
+                        <li><strong>Font-style:</strong> creating an emphasized byline on a blog post</li>
+                        <li><strong>Margin:</strong> creating white space between different divs</li>
+                        <li><strong>Padding:</strong> aligning text as desired</li>
+                    </ul>
+                </li>
             </ul>
 
         </div>        
         
-        <div id="phase3" style="background-color: darkkhaki;">
+        <div id="phase3">
             <h2>Phase 3: Implementation</h2>
         </div>        
         
-        <div id="phase4" style="background-color: olive;">
+        <div id="phase4">
             <h2>Phase 4: Testing & Debugging</h2>
             <h3>Working links test</h3>
             <ul>
@@ -126,11 +144,11 @@
             
         </div>        
         
-        <div id="phase5" style="background-color: orange;">
+        <div id="phase5">
             <h2>Phase 5: Deployment</h2>
         </div>        
         
-        <div id="phase6" style="background-color: lightgreen;">
+        <div id="phase6">
             <h2>Phase 6: Maintenance</h2>
             <ul>
                 <li>

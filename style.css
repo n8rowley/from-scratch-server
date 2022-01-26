@@ -14,6 +14,10 @@ h2 {
     background-color: burlywood;
 }
 
+.nav-bar a {
+    padding-left: 20px;
+}
+
 h3 {
     margin-bottom: 0px;
 }
@@ -143,3 +147,32 @@ code {
     margin-left: 15%;
 }
 
+#phase0 {
+    background-color: violet;
+}
+
+#phase1 {
+    background-color: purple;
+    color: silver
+}
+
+#phase2 {
+    background-color: mediumpurple;
+}
+
+#phase3 {
+    background-color: orchid;
+}
+
+#phase4 {
+    background-color: maroon;
+    color: silver;
+}
+
+#phase5 {
+    background-color: magenta;
+}
+
+#phase6 {
+    background-color: darkorchid;
+}
