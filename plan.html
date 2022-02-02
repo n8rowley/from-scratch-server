@@ -21,12 +21,29 @@
             <h2>Phase 0: Requirements Specifications</h2>
             <h3>The problem</h3>
             <ul>
-                <li>The result of this project is a group of interconnected html pages with several types of content</li>
+                <li>The result of this project is a Python program that runs a simple http server. </li>
+                <li>
+                    The server will respond to proper http GET requests and handle several different situations with appropriate
+                    responses. Some of these situations include:
+                        <ul>
+                            <li>Retreiving a page and successfully sending it to a user-agent based on a request for the page</li>
+                            <li>Redirecting a user-agent to other pages</li>
+                            <li>Blocking a user-agents access to areas they shouldn't access</li>
+                            <li>Respond with an appropriate error message if a request cannot be handled</li>
+                            
+                        </ul>
+                </li>
             </ul>
             <h3>The solution</h3>
             <ul>
-                <li><strong>What I Know: </strong>page style will be assisted through theuse of id's and classes</li>
-                <li><strong>What I'm not sure about: </strong>I'm not sure how to implement a relative url link. Also, I don't know how to implement zebra stripes with css</li>
+                <li>
+                    <strong>What I Know: </strong>the HTTPserver class defined by Python has functionality for many of the 
+                    features/behaviors I need to include
+                </li>
+                <li>
+                    <strong>What I'm not sure about: </strong>Is my code still going to be long and verbose, or does the functionality
+                    do so much that the resulting source code is stream-lined?
+                </li>
             </ul>
         </div>
 
@@ -34,70 +51,36 @@
             <h2>Phase 1: System Analysis</h2>
             <h3>Data</h3>
             <ul>
-                <li>All blog page files will be in a common folder</li>
-                <li>links between these files will be navigated via relative URL's</li>
-                <li>External webpages are links to MDN's website, accomplished via absolute URL's</li>
+                <li>
+                    The server is self contained in a single Python file. It will be run from the command line. The server will be 
+                    listening on localhost and therefore never be exposed to the actual internet.
+                </li>
+                <li>
+                    http request will be sent through a browser. HTTPserver knows how to collect the request, but leaves the details 
+                    of handling the request to overridden methods.
+                </li>
+                <li>
+                    Static html files will be accessible to the server because it will be running from the same directory where the 
+                    files are located.
+                </li>
+                <li>
+                    Data will be transfered back to the user-agent by implementing HTTPserver methods and functionality
+                </li>
             </ul>
             <h3>Output</h3>
             <ul>
-                <li>HTML pages that can be browsed in a local file system.
-                    <ul>
-                        <li>Every page connects to every other page via a navigation bar. Links can be followed without knowing anything about the path
-                        </li>
-                    </ul>
+                <li>When browsing to localhost:8000 on the source machine, a website will be available to view and navigate</li>
+                <li>
+                    Many pages will be the ones created for the previous assignment while others will be dynamically generated
+                    and be new to this assignment
                 </li>
-
             </ul>
         </div>    
             
         <div id="phase2">
             <h2>Phase 2: Design</h2>
-            <ul>
-                <li>
-                    Each <code>&lt;div&gt;</code> element that will have a similar background color or properties to others on 
-                    the same page will be managed with a common class. Examples include:
-                    <ul>
-                        <li><code>blog-post</code></li>
-                        <li><code>nav-bar</code></li>
-                        <li><code>cheatsheet</code></li>
-                        <li><code>bio</code></li>
-                    </ul>
-                </li>
-
-                <li>
-                    Each <code>&lt;div&gt;</code> element that requires a unique background color or other properties will be 
-                    managed by a unique id. Examples include:
-                    <ul>
-                        <li><code>phase(0-6)</code></li>
-                        <li><code>element</code></li>
-                        <li><code>entity</code></li>
-                        <li><code>selector</code></li>
-                        <li><code>property</code></li>
-                    </ul>
-                </li>
-                <li>Each blog element will be contained in a <code>&lt;div&gt;</code> tag with a corresponding class attribute 
-                    to assist with consistent formatting (font, size, etc) accross pages and sections</li>
-                <li>Picture gallery will be implemented using a flex box for horizontal display</li>
-                <li>
-                    Possible uses of less-obvious tags:
-                    <ul>
-                        <li><strong>div:</strong> basically everything</li>
-                        <li><strong>p:</strong> blocks of content text</li>
-                        <li><strong>code:</strong> representing techtip entries as they would look in the source code</li>
-                        <li><strong>ul:</strong> listing out blocks of info</li>
-                        <li><strong>ol:</strong> describing the steps in executing tests</li>
-                    </ul>
-                </li>
-                <li>
-                    Possible uses of less-obvious selectors
-                    <ul>
-                        <li><strong>Font-style:</strong> creating an emphasized byline on a blog post</li>
-                        <li><strong>Margin:</strong> creating white space between different divs</li>
-                        <li><strong>Padding:</strong> aligning text as desired</li>
-                    </ul>
-                </li>
-            </ul>
-
+            
+          
         </div>        
         
         <div id="phase3">
