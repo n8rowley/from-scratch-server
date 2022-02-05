@@ -176,3 +176,9 @@ code {
 #phase6 {
     background-color: darkorchid;
 }
+
+.doc-string {
+    padding-left: 4em;
+    margin-top: 5px;
+    
+}

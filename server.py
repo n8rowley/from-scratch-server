@@ -1,4 +1,5 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
+import os
 
 
 class CS2610Assn1(BaseHTTPRequestHandler):
@@ -11,7 +12,18 @@ class CS2610Assn1(BaseHTTPRequestHandler):
 
     Replace this pass statement with your own code:
     """
-    pass
+    
+    def do_GET(self):
+        print("forming response...")
+        print(os.listdir())
+        self.send_response(404)
+        self.send_header("nates-header", "You got this info back")
+        self.end_headers()
+        
+
+        print("\nExiting...\n")
+        exit(0)
+
 
 
 if __name__ == '__main__':
