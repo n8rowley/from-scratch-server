@@ -1,5 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import os
+import mimetypes
 
 
 
@@ -13,18 +14,11 @@ class CS2610Assn1(BaseHTTPRequestHandler):
 
     Replace this pass statement with your own code:
     """
-    MIME_TYPES = {
-        "html": "text/html",
-        "css": "text/css",
-        "jpg": "image/jpeg",
-        "png": "image/png",
-        "ico": "image/x-icon"
-        }
 
     def beginResponse(self, statusCode):
         self.send_response(statusCode)
         self.send_header("Connection", "close")
-        self.send_header("Cache-Control", "500")
+        self.send_header("Cache-Control", "5")
 
     def serveFile(self, filePath, mimeType, statusCode=200):
         self.beginResponse(statusCode)
@@ -33,7 +27,6 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         f.close()
         self.send_header("Content-Length", str(len(data)))
 
-        ext = filePath.split(".")[-1]
         self.send_header("Content-Type", mimeType)
         self.end_headers()
         self.wfile.write(data)
@@ -57,11 +50,11 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         <p>Headers
             <ul>
         """
-        for h in self.headers:
+        for h, v in self.headers.items():
             content += "<li>"
             content += h
             content += ": "
-            content += self.headers[h]
+            content += v
             content += "</li>"
         
         content += "</ul></p>"
@@ -81,7 +74,7 @@ class CS2610Assn1(BaseHTTPRequestHandler):
 
     def send404(self):
         self.serveFile("error404.html", "text/html", 404)
-        pass
+        
 
     def inspectPath(self, requestPath):
         if requestPath == "":
@@ -106,8 +99,7 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         relativePath = self.path[1:]
         print(relativePath)
         if os.access(relativePath, os.R_OK):
-            ext = relativePath.split(".")[-1]
-            self.serveFile(relativePath, self.MIME_TYPES[ext])
+            self.serveFile(relativePath, mimetypes.guess_type(relativePath))
         else:
             self.inspectPath(relativePath)
 
