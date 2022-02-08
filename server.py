@@ -3,6 +3,7 @@ import os
 import mimetypes
 
 
+#TODO: Add links to other pages
 
 class CS2610Assn1(BaseHTTPRequestHandler):
     """
@@ -69,9 +70,11 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         self.serveFile("error418.html", "text/html", 418)
         
 
+    # TODO: This could be done dynamically, but unclear if it's required
     def denyAccess(self):
         self.serveFile("error403.html", "text/html", 403)
 
+    # TODO: could be dynamic
     def send404(self):
         self.serveFile("error404.html", "text/html", 404)
         
