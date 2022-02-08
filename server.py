@@ -80,6 +80,7 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         self.serveFile("error403.html", "text/html", 403)
 
     def send404(self):
+        self.serveFile("error404.html", "text/html", 404)
         pass
 
     def inspectPath(self, requestPath):
@@ -97,11 +98,7 @@ class CS2610Assn1(BaseHTTPRequestHandler):
             self.teapotResponse()
         elif requestPath == "forbidden":
             self.denyAccess()
-            pass
-        
-
-        
-
+            
         else:
             self.send404()
 
