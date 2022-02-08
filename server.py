@@ -1,6 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import os
-import re
+
 
 
 class CS2610Assn1(BaseHTTPRequestHandler):
@@ -13,14 +13,20 @@ class CS2610Assn1(BaseHTTPRequestHandler):
 
     Replace this pass statement with your own code:
     """
-    
+    MIME_TYPES = {
+        "html": "text/html",
+        "css": "text/css",
+        "jpg": "image/jpeg",
+        "png": "image/png",
+        "ico": "image/x-icon"
+        }
 
     def beginResponse(self, statusCode):
         self.send_response(statusCode)
         self.send_header("Connection", "close")
         self.send_header("Cache-Control", "500")
 
-    def serveFile(self, filePath, statusCode=200):
+    def serveFile(self, filePath, mimeType, statusCode=200):
         self.beginResponse(statusCode)
         f = open(filePath, "rb")
         data = f.read()
@@ -28,7 +34,7 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(data)))
 
         ext = filePath.split(".")[-1]
-        self.send_header("Content-Type", "text/html") #TODO: Fix this
+        self.send_header("Content-Type", mimeType)
         self.end_headers()
         self.wfile.write(data)
 
@@ -39,13 +45,39 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         self.end_headers()
 
     def makeDebug(self):
-        pass
+        self.beginResponse(200)
+        content = f"""
+        <h1>Debugging page</h1>
+        <p>Server version: {self.server_version}</p>
+        <p>Server timestamp: {self.date_time_string()}</p>
+        <p>User-agent address: {self.client_address[0]}:{self.client_address[1]}</p>
+        <p>Requested path: "{self.path}"</p>
+        <p>HTTP request command: {self.command}</p>
+        <p>Request version: {self.request_version}</p>
+        <p>Headers
+            <ul>
+        """
+        for h in self.headers:
+            content += "<li>"
+            content += h
+            content += ": "
+            content += self.headers[h]
+            content += "</li>"
+        
+        content += "</ul></p>"
+
+        data = bytes(content, "utf-8")
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Content-Type", "text/html")
+        self.end_headers()
+        self.wfile.write(data)
 
     def teapotResponse(self):
-        pass
+        self.serveFile("error418.html", "text/html", 418)
+        
 
     def denyAccess(self):
-        pass
+        self.serveFile("error403.html", "text/html", 403)
 
     def send404(self):
         pass
@@ -57,6 +89,18 @@ class CS2610Assn1(BaseHTTPRequestHandler):
             self.sendRedirect(requestPath + ".html")
         elif requestPath.startswith("bio"):
             self.sendRedirect("about.html")
+        elif requestPath in ("help", "tips"):
+            self.sendRedirect("techtips+css.html")
+        elif requestPath == "debugging":
+            self.makeDebug()
+        elif requestPath == "teapot":
+            self.teapotResponse()
+        elif requestPath == "forbidden":
+            self.denyAccess()
+            pass
+        
+
+        
 
         else:
             self.send404()
@@ -65,7 +109,8 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         relativePath = self.path[1:]
         print(relativePath)
         if os.access(relativePath, os.R_OK):
-            self.serveFile(relativePath)
+            ext = relativePath.split(".")[-1]
+            self.serveFile(relativePath, self.MIME_TYPES[ext])
         else:
             self.inspectPath(relativePath)
 
@@ -75,7 +120,7 @@ class CS2610Assn1(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    server_address = ('localhost', 8000)
+    server_address = ('localhost', 8888)
     print(f"Serving from http://{server_address[0]}:{server_address[1]}")
     print("Press Ctrl-C to quit\n")
     try:

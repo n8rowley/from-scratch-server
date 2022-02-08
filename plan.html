@@ -7,7 +7,7 @@
         <title>Plan</title>
     </head>
     <body>
-        <h1 id="sdp">Assn0 Plan</h1>
+        <h1 id="sdp">Assn1 Plan</h1>
 
         <div class="nav-bar">
             <h2>Navigation</h2>
@@ -83,19 +83,20 @@
                     <code>do_GET()</code>
                     <p class="doc-string">
                         Class method that must be overriden to respond to get requests and will be the root of all functionality for this project. 
-                        calls the <code>serveFile</code> function if requested path is an existing file and <code>pathInspector</code> otherwise.
+                        calls the <code>serveFile</code> function if requested path is an existing file and <code>inspectPath</code> otherwise.
                     </p>
                     <div class="pseudocode">
                         <pre>
 psueodcode:
     remove leading "/" from the path
     if path can be accessed:
-        call a function to serveFile and pass along the truncated path
-    else call pathInspector and pass along the truncated path
+        check extension to get MIME type
+        call a function to serveFile and pass along the truncated path and MIME type
+    else call inspectPath and pass along the truncated path
                         </pre>
                     </div>
 
-                    <code>serveFile(str: filePath , int: statusCode=200): void</code>
+                    <code>serveFile(str: filePath , str: mimeType, int: statusCode=200): void</code>
                     <p class="doc-string">Serves the file at filePath to the user. Calls <code>beginResponse</code></p>
                     <div class="pseudocode">
                         <pre>
@@ -104,14 +105,14 @@ psueodcode:
     read in the file at filePath in binary mode
     measure the size of the read file for the content length header
     call send_header() to add a content length
-    call send_header() to add a MIME type
+    call send_header() to add a mimeType
     call end_headers()
     write file data to self.wfile()
 
                         </pre>
                     </div>
                     
-                    <code>pathInspector(str: requestPath): void</code>
+                    <code>inspectPath(str: requestPath): void</code>
                     <p class="doc-string">
                         Takes the requested file path and calls the appropriate processing function, passing any relavent information.
                         Calls <code>sendRedirect</code>, <code>makeDebug</code>, <code>denyAccess</code>, <code>teapotResponse</code>,
@@ -149,7 +150,7 @@ psueodcode:
 
                     
 
-                    <code>sendRedirect(str: redirectPath): void</code>
+                    <code>sendRedirect(str: redirectLocation): void</code>
                     <p class="doc-string">Creates a redirect response and with the location being redirectPath. Calls <code>beginResponse</code></p>
                     <div class="pseudocode">
                         <pre>
@@ -190,7 +191,7 @@ psueodcode:
                     <div class="pseudocode">
                         <pre>
 psueodcode:
-    call serveFile() with teapot file path and status code 418   
+    call serveFile() with teapot file path, MIME type, and status code 418   
                         </pre>
                     </div>
                     
@@ -200,7 +201,7 @@ psueodcode:
                     <div class="pseudocode">
                         <pre>
 psueodcode:
-    call serveFile() with forbidden file path and status code 403
+    call serveFile() with forbidden file path, MIME type and status code 403
                         </pre>
                     </div>
 
@@ -210,7 +211,7 @@ psueodcode:
                     <div class="pseudocode">
                         <pre>
 psueodcode:
-    call serveFile() with 404 file path and status code 404
+    call serveFile() with 404 file path, MIME type, and status code 404
                         </pre>  
                     </div>
 
