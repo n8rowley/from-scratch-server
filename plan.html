@@ -90,21 +90,21 @@
 psueodcode:
     remove leading "/" from the path
     if path can be accessed:
-        call a function to serve that file and pass along the truncated path
+        call a function to serveFile and pass along the truncated path
     else call pathInspector and pass along the truncated path
                         </pre>
                     </div>
 
-                    <code>serveFile(str: filePath): void</code>
+                    <code>serveFile(str: filePath , int: statusCode=200): void</code>
                     <p class="doc-string">Serves the file at filePath to the user. Calls <code>beginResponse</code></p>
                     <div class="pseudocode">
                         <pre>
 psueodcode:
-    calls begin header 
+    calls beginResponse() with statusCode
     read in the file at filePath in binary mode
     measure the size of the read file for the content length header
-    add a header with content length
-    add a header with the MIME type
+    call send_header() to add a content length
+    call send_header() to add a MIME type
     call end_headers()
     write file data to self.wfile()
 
@@ -154,6 +154,10 @@ psueodcode:
                     <div class="pseudocode">
                         <pre>
 psueodcode:
+    call beginResponse with status code 301
+    call send_header() to add a location corresponding to redirectPath
+    call end_headers()
+
                         </pre>
                     </div>
 
@@ -163,39 +167,63 @@ psueodcode:
                     <div class="pseudocode">
                         <pre>
 psueodcode:
+    call beginResponse() with status code 200
+    create a format string for the embedded html 
+        format the server's version string using self.server_version (override?)
+        format the server's current date and time using self.date_time_string()
+        format the clients IP address and port using client_address
+        format the path requested by the client using self.path
+        format the HTTP request type (a.k.a. command) using self.command
+        format the HTTP version of this request using self.request_version
+        format the headers sent by the browser as an ordered list using self.headers
+    Make the format string into a byte string 
+    call send_header() to add content length 
+    call send_header() to add MIME type 
+    call end_headers() 
+    write formatted byte string to self.wfile
                         </pre>
                     </div>
+
+                    
+                    <code>teapotResponse(): void</code>
+                    <p class="doc-string">Send a short and stout response explaining that you're not a coffee pot</p>
+                    <div class="pseudocode">
+                        <pre>
+psueodcode:
+    call serveFile() with teapot file path and status code 418   
+                        </pre>
+                    </div>
+                    
 
                     <code>denyAccess(): void</code>
                     <p class="doc-string">Send a response that lets the user know they can't access the requested page</p>
                     <div class="pseudocode">
                         <pre>
 psueodcode:
+    call serveFile() with forbidden file path and status code 403
                         </pre>
                     </div>
 
-                    <code>teapotResponse(): void</code>
-                    <p class="doc-string">Send a short and stout response explaining that you're not a coffee pot</p>
-                    <div class="pseudocode">
-                        <pre>
-psueodcode:
-                        </pre>
-                    </div>
 
                     <code>send404(): void</code>
                     <p class="doc-string">Lets the user know their requested path wasn't found</p>
                     <div class="pseudocode">
                         <pre>
 psueodcode:
+    call serveFile() with 404 file path and status code 404
                         </pre>  
                     </div>
 
-                    <code>beginResponse(): void</code>
+                    <code>beginResponse(int: statusCode): void</code>
                     <p class="doc-string">Begins a response that includes all 4 required headers for any response. Uses several
                         BaseHTTPRequestHandler built-in functionalities</p>
                     <div class="pseudocode">
                         <pre>
 psueodcode:
+    call send_response() with statusCode
+    call send_header() to add a connection header
+    call send_header() to add a cache-control
+    
                         </pre>  
                     </div>
 
