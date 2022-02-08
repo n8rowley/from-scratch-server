@@ -112,7 +112,7 @@ class CS2610Assn1(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    server_address = ('localhost', 8888)
+    server_address = ('localhost', 8000)
     print(f"Serving from http://{server_address[0]}:{server_address[1]}")
     print("Press Ctrl-C to quit\n")
     try:
