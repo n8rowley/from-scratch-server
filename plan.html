@@ -90,7 +90,7 @@
 psueodcode:
     remove leading "/" from the path
     if path can be accessed:
-        check extension to get MIME type
+        use mimeType.guess_type() to get MIME type
         call a function to serveFile and pass along the truncated path and MIME type
     else call inspectPath and pass along the truncated path
                         </pre>
@@ -244,41 +244,182 @@ psueodcode:
         
         <div id="phase4">
             <h2>Phase 4: Testing & Debugging</h2>
-            <h3>Working links test</h3>
+            <h3>"200 OK" sent correctly</h3>
             <ul>
-                <li><strong>Procedure:</strong> For each webpage,
+                <li><strong>Procedure:</strong> 
                     <ol>
-                        <li>Scroll to the top of the page where the navigation bar is visible.</li>
-                        <li>Click on the first link</li>
-                        <li>Confirm expected result</li>
-                        <li>Return to the original page and repeat steps 1-3 for each link</li>
-                        <li>Navigate to another webpage and repeat steps 1-4 for every page in the project</li>
+                        <li>Begin running the server by using a python3 interpreter to run server.py</li>
+                        <li>Run the netcat command as follows: <code>nc localhost 8000</code></li>
+                        <li>For each html file in the assn01 directory
+                            <ol>
+                                <li>Create a HTTP GET request by typing <code>GET /&lt;filename&gt; HTTP/1.0</code> into the netcat input area follow by hitting enter twice (include the file extension in filename)</li>
+                            </ol>
+                        </li>
+
                     </ol></li>
                 
-                <li><strong>Expected Result:</strong> The browser is redirected to the page that corresponds to the link text without any other input</li>
+                <li><strong>Expected Result:</strong>An HTTP response from the server will be displayed by netcat. The response will include
+                    <ol>
+                        <li>An http repsonse header that includes the code "200 OK"</li>
+                        <li>A header that gives the servers date stamp</li>
+                        <li>A header that gives the server identification string </li>
+                        <li>A header that specifies that the connection will be closed</li>
+                        <li>A header specifying the cache-contrl to be a small value</li>
+                        <li>A header giving the content-length</li>
+                        <li>A header giving the content-type as a MIME type</li>
+                        <li>HTML code displayed as plain text that matches the html for the local file with the same name</li>
+                    </ol>
+                </li>
 
             </ul>
 
-            <h3>Valid HTML test</h3>
+            <h3>"301 Permenantly Moved" sent correctly</h3>
             <ul>
-                <li>
-                    <strong>Procedure:</strong> For each wepage, upload the source file to W3C's HTML validator tool
-                    <ul><li>https://validator.w3.org/nu/#file</li></ul>
-                </li>
-                
-                <li><strong>Expected Result:</strong> The tool reports no warnings or errors</li>
-            </ul> 
+                <li><strong>Procedure:</strong> 
+                    <ol>
+                        <li>Begin running the server by using a python3 interpreter to run server.py</li>
+                        <li>Run the netcat command as follows: <code>nc localhost 8000</code></li>
+                        <li>For each path that should be redirected (filenames w/o ".html", "/", "/help", "/tips", "/bio*")
+                            <ol>
+                                <li>Create a HTTP GET request by typing <code>GET /&lt;path&gt; HTTP/1.0</code> into the netcat input area follow by hitting <code>enter</code> twice</li>
+                            </ol>
+                        </li>
 
-            <h3>Valid CSS test</h3>
-            <ul>
-                <li>
-                    <strong>Procedure:</strong> For each wepage, upload the source file to W3C's CSS validator tool
-                    <ul><li>https://validator.w3.org/nu/#file</li></ul>
-                </li>
+                    </ol></li>
                 
-                <li><strong>Expected Result:</strong> The tool reports no warnings or errors</li>
-
+                <li><strong>Expected Result:</strong>An HTTP response from the server will be displayed by netcat. The response will include
+                    <ol>
+                        <li>An http repsonse header that includes the code "301 Moved Permenantly"</li>
+                        <li>A header that gives the servers date stamp</li>
+                        <li>A header that gives the server identification string </li>
+                        <li>A header that specifies that the connection will be closed</li>
+                        <li>A header specifying the cache-contrl to be a small value</li>
+                        <li>A header specifying the path the user-agent should browse to instead to get requested info</li>
+                    </ol>
+                </li>
             </ul>
+
+            <h3>Debugging page sent correctly</h3>
+            <ul>
+                <li><strong>Procedure:</strong> 
+                    <ol>
+                        <li>Begin running the server by using a python3 interpreter to run server.py</li>
+                        <li>Run the netcat command as follows: <code>nc localhost 8000</code></li>
+                        <li>Create an HTTP GET request by 
+                            <ol>
+                                <li>typing <code>GET /debugging HTTP/1.0</code> into the netcat input area follow by hitting <code>enter</code></li>
+                                <li>adding a test header by typing <code>Test-Header: this is for debugging</code> followed by hitting <code>enter</code></li>
+                                <li>HIt <code>enter</code> once more to complete the request</li>
+                            </ol>
+                </li>
+
+                  
+                </li>
+                
+                <li><strong>Expected Result:</strong>An HTTP response from the server will be displayed by netcat. The response will include
+                    <ol>
+                        <li>An http repsonse header that includes the code "200 OK"</li>
+                        <li>A header that gives the servers date stamp</li>
+                        <li>A header that gives the server identification string </li>
+                        <li>A header that specifies that the connection will be closed</li>
+                        <li>A header specifying the cache-contrl to be a small value</li>
+                        <li>A header giving the content-length</li>
+                        <li>A header giving the content-type as a MIME type</li>
+                        <li>HTML code displayed as plain text that dynamically provides 
+                            <ol>
+                                <li>The server's version string</li>
+                                <li>The server's current date and time</li>
+                                <li>The client's IP address and port number as observed by the server</li>
+                                <li>The path requested by the client ("/debugging")</li>
+                                <li>The HTTP request type (GET)</li>
+                                <li>An ordered list of the HTTP request headers ("Test-Header: this is for debugging")</li>
+                            </ol>
+                        </li>
+
+                    </ol>
+                </li>
+            </ul>
+
+            <h3>"418 I'm a teapot" sent correctly</h3>
+            <ul>
+                <li><strong>Procedure:</strong> 
+                    <ol>
+                        <li>Begin running the server by using a python3 interpreter to run server.py</li>
+                        <li>Run the netcat command as follows: <code>nc localhost 8000</code></li>
+                        <li>
+                            Create an HTTP GET request by typing <code>GET /teapot HTTP/1.0</code> into the netcat input area follow by hitting <code>enter</code> twice
+                        </li>
+                </li>
+                
+                <li><strong>Expected Result:</strong>An HTTP response from the server will be displayed by netcat. The response will include
+                    <ol>
+                        <li>An http repsonse header that includes the code "418 I'm a teapot"</li>
+                        <li>A header that gives the servers date stamp</li>
+                        <li>A header that gives the server identification string </li>
+                        <li>A header that specifies that the connection will be closed</li>
+                        <li>A header specifying the cache-contrl to be a small value</li>
+                        <li>A header giving the content-length</li>
+                        <li>A header giving the content-type as a MIME type</li>
+                        <li>HTML text that renders a short and stout message explaining the differences between teapots and coffee pots and includes a "a" tag with a link to the homepage</li>
+
+                    </ol>
+                </li>
+            </ul>
+
+
+            <h3>"403 Forbidden" sent correctly</h3>
+            <ul>
+                <li><strong>Procedure:</strong> 
+                    <ol>
+                        <li>Begin running the server by using a python3 interpreter to run server.py</li>
+                        <li>Run the netcat command as follows: <code>nc localhost 8000</code></li>
+                        <li>
+                            Create an HTTP GET request by typing <code>GET /forbidden HTTP/1.0</code> into the netcat input area follow by hitting <code>enter</code> twice
+                        </li>
+                </li>
+                
+                <li><strong>Expected Result:</strong>An HTTP response from the server will be displayed by netcat. The response will include
+                    <ol>
+                        <li>An http repsonse header that includes the code "403 Forbidden"</li>
+                        <li>A header that gives the servers date stamp</li>
+                        <li>A header that gives the server identification string </li>
+                        <li>A header that specifies that the connection will be closed</li>
+                        <li>A header specifying the cache-contrl to be a small value</li>
+                        <li>A header giving the content-length</li>
+                        <li>A header giving the content-type as a MIME type</li>
+                        <li>HTML text that renders a message telling the user they can't access the data at this path and includes a "a" tag with a link to the homepage</li>
+
+                    </ol>
+                </li>
+            </ul>
+
+
+            <h3>"404 Not Found" sent correctly</h3>
+            <ul>
+                <li><strong>Procedure:</strong> 
+                    <ol>
+                        <li>Begin running the server by using a python3 interpreter to run server.py</li>
+                        <li>Run the netcat command as follows: <code>nc localhost 8000</code></li>
+                        <li>
+                            Create an HTTP GET request for a non-existant path by typing <code>GET /does-not-exist HTTP/1.0</code> into the netcat input area follow by hitting <code>enter</code> twice
+                        </li>
+                </li>
+                
+                <li><strong>Expected Result:</strong>An HTTP response from the server will be displayed by netcat. The response will include
+                    <ol>
+                        <li>An http repsonse header that includes the code "404 Not Found"</li>
+                        <li>A header that gives the servers date stamp</li>
+                        <li>A header that gives the server identification string </li>
+                        <li>A header that specifies that the connection will be closed</li>
+                        <li>A header specifying the cache-contrl to be a small value</li>
+                        <li>A header giving the content-length</li>
+                        <li>A header giving the content-type as a MIME type</li>
+                        <li>HTML text that renders a message telling the user the path they specificed doesn't have a source file and includes a "a" tag with a link to the homepage</li>
+
+                    </ol>
+                </li>
+            </ul>
+
             
         </div>        
         
@@ -295,8 +436,11 @@ psueodcode:
                         <li> Are there parts of your program which you aren't quite sure how/why they work?</li>
                         <li>If a bug is reported in a few months, how long would it take you to find the cause?</li>
                     </ul>
-                    <p>ANSWER: My css selectors are spread sporatically between elements and classes. There's no good system
-                       to explain when one is used versus another
+                    <p>ANSWER: I think my server code benefitted highly from me spending a lot of time nailing down the plan and thinking through
+                        all the sub problems before coding. Therefore, the messiest part is the messiness that was left over from assn0. THat is mostly
+                        manifested through dissorganized css selectors. I additionally didn't have time to adjust the navigation bar to include links to
+                        all relevent addresses for this assignment which shouldn't lose me points but possibly make the graders have to work a little harder
+                        to grade my project
                     </p>
                 </li>
                 <li>
@@ -306,14 +450,14 @@ psueodcode:
                         <li>yourself in six month's time?</li>
                     </ul>
                     <p>
-                        ANSWER: I'm realizing that classes help navigate through the source file. I think I've added just enough
-                        class attributes to make sense of the general structure. I use a lot of nested lists and I'm sure those
-                        are one of the most confusing parts. I bet the navigability could be improved by adding classes.
+                        ANSWER: It should make sense to those who've read the documentation XD. I think I've broken down functionality into 
+                        small, bite-size pieces that may have been more granular than needed, but will make following, changing, and extending 
+                        the code much easier in the future
                     </p>
                 </li>
                 <li>
                     How easily will it be to add a new feature to this program in a year?
-                    <p>ANSWER: I may have to do some work adding classes; so as far as html goes, maybe not that easy.</p>
+                    <p>ANSWER: Shoud be really easy (see above)</p>
                 </li>
                 <li>
                     Will your program continue to work after upgrading:
@@ -323,9 +467,9 @@ psueodcode:
                         <li>to the next version of Python?</li>
                     </ul>
                     <p>
-                        ANSWER: This program doesn't use any 3rd party libraries. It is very basic HTML and should be rendered by all 
-                        main-stream internet browsers. Best practices were used for syntax so the next version of html should 
-                        support all features.
+                        ANSWER: This program doesn't use any 3rd party libraries, just a few in the python standard library. The server should 
+                        successfully serve files to any machine that uses the HTTP protocol correctly. It was written in Python3.8 so therefore must
+                        be run with 3.8 or higher (this is a explicit Requirement).
                     </p>
                 </li>
             </ul>
