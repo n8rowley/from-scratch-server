@@ -84,16 +84,10 @@ class CS2610Assn1(BaseHTTPRequestHandler):
             self.sendRedirect("index.html")
         elif os.access(requestPath + ".html", os.R_OK):
             self.sendRedirect(requestPath + ".html")
-        elif requestPath.startswith("bio"):
-            self.sendRedirect("about.html")
-        elif requestPath in ("help", "tips"):
-            self.sendRedirect("techtips+css.html")
         elif requestPath == "debugging":
             self.makeDebug()
-        elif requestPath == "teapot":
+        elif requestPath == "make-coffee":
             self.teapotResponse()
-        elif requestPath == "forbidden":
-            self.denyAccess()
             
         else:
             self.send404()
