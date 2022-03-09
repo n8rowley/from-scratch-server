@@ -1,4 +1,4 @@
-# from-scratch-server
+# From-scratch Server
 A server that is implemented using only Python
 
 ## Purpose
