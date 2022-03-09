@@ -3,8 +3,6 @@ import os
 import mimetypes
 
 
-#TODO: Add links to other pages
-
 class CS2610Assn1(BaseHTTPRequestHandler):
     """
     Your task is to define this class such that it fulfills the assingment
@@ -42,6 +40,7 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         self.beginResponse(200)
         content = f"""
         <h1>Debugging page</h1>
+        <a href="index.html">Homepage</a>
         <p>Server version: {self.server_version}</p>
         <p>Server timestamp: {self.date_time_string()}</p>
         <p>User-agent address: {self.client_address[0]}:{self.client_address[1]}</p>
@@ -70,11 +69,9 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         self.serveFile("error418.html", "text/html", 418)
         
 
-    # TODO: This could be done dynamically, but unclear if it's required
     def denyAccess(self):
         self.serveFile("error403.html", "text/html", 403)
 
-    # TODO: could be dynamic
     def send404(self):
         self.serveFile("error404.html", "text/html", 404)
         
@@ -96,7 +93,7 @@ class CS2610Assn1(BaseHTTPRequestHandler):
         relativePath = self.path[1:]
         print(relativePath)
         if os.access(relativePath, os.R_OK):
-            self.serveFile(relativePath, mimetypes.guess_type(relativePath))
+            self.serveFile(relativePath, mimetypes.guess_type(relativePath)[0])
         else:
             self.inspectPath(relativePath)
 
@@ -106,7 +103,7 @@ class CS2610Assn1(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    server_address = ('localhost', 8000)
+    server_address = ('localhost', 8888)
     print(f"Serving from http://{server_address[0]}:{server_address[1]}")
     print("Press Ctrl-C to quit\n")
     try:
